@@ -1,0 +1,6 @@
+numpy
+matplotlib
+opencv_python
+requests
+scipy
+torch
