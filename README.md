@@ -6,8 +6,8 @@
 .
 |-- images：存放待检测图像文件
 |-- models：
-|   |-- model_a: (OpenPose)[https://github.com/CMU-Perceptual-Computing-Lab/openpose]
-|   |-- model_b: (BaiduAI)[https://ai.baidu.com/tech/body/hand]
+|   |-- model_a: [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
+|   |-- model_b: [BaiduAI](https://ai.baidu.com/tech/body/hand)
 |-- requirements.txt:
 |-- find_circle.py:
 |-- hand_detect.py:
@@ -60,4 +60,4 @@
     备注：
     * 对于没有检测到logo的图片，以平均logo像素半径作为参考计算手指的实际长度
     * 关键点坐标图示如下
-    !()[assets/fingerpoint.png]
+    ![](assets/fingerpoint.png)
