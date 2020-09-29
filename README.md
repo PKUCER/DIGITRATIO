@@ -1,21 +1,24 @@
 # DigitRatio
 
-## 文件说明
+## 目录说明
 
 ```shell
 .
 |-- images：存放待检测图像文件
 |-- models：
-|   |-- model_a: [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
-|   |-- model_b: [BaiduAI](https://ai.baidu.com/tech/body/hand)
+|   |-- model_a: 模型a
+|   |-- model_b: 模型b
 |-- requirements.txt:
-|-- find_circle.py:
-|-- hand_detect.py:
+|-- FindCircle.py: 检测logo，为计算手指实际长度建立标尺
+|-- HandDetect.py: 检测关节点，输出最终数据
 ```
 
 备注：
 
-* 图像为jpeg格式
+* 图像为jpeg/png/jpg问卷
+* model_a: [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
+* model_b: [BaiduAI](https://ai.baidu.com/tech/body/hand)
+
 
 ## 使用
 
@@ -23,11 +26,11 @@
     * 去除不含手掌的照片
     * ESIEC2019logo贴纸以3cm为标准
 
-0. python3环境之下
+0. 环境准备
+    * python3.8.5
+    * pip install -r requirements.txt
 
-0. pip install -r requirements.txt
-
-0. python find_dircle.py
+0. python FindCircle.py
     运行结果：
     生成images_preprocessed文件夹
 
@@ -40,7 +43,7 @@
 
     ```
 
-0. python hand_detect.py
+0. python HandDetect.py
     运行结果：
     生成images_result文件夹
 
@@ -60,4 +63,14 @@
     备注：
     * 对于没有检测到logo的图片，以平均logo像素半径作为参考计算手指的实际长度
     * 关键点坐标图示如下
+
     ![](assets/fingerpoint.png)
+
+## 拍照操作建议
+
+1. 红色背景板，右上角贴直径3cm白底logo贴纸
+0. 红色背景板不要反光（不要外面套塑料纸）
+0. 手心朝下,伸直、压平
+0. 镜头同背景板平行
+0. 灯光明亮，不要有阴影入境
+0. 照片中手指朝上
