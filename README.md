@@ -14,25 +14,19 @@
 ```
 
 备注：
-
-* 图像为jpeg/png/jpg问卷
+* 图像为jpeg/png/jpg格式
 * model_a: [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
 * model_b: [BaiduAI](https://ai.baidu.com/tech/body/hand)
 
 
 ## 使用
 
-1. ESIEC2019数据预处理：
-    * 去除不含手掌的照片
-    * ESIEC2019logo贴纸以3cm为标准
-
-0. 环境准备
+1. 环境准备
     * python3.8.5
     * pip install -r requirements.txt
 
 0. python FindCircle.py
-    运行结果：
-    生成images_preprocessed文件夹
+    运行结果：生成images_preprocessed文件夹
 
     ```shell
     images_preprocessed
