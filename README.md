@@ -6,8 +6,8 @@
 .
 |-- images：存放待检测图像文件
 |-- models：
-|   |-- model_a: 模型a
-|   |-- model_b: 模型b
+|   |-- model_1: 模型1
+|   |-- model_2: 模型2
 |-- requirements.txt:
 |-- FindCircle.py: 检测logo，为计算手指实际长度建立标尺
 |-- HandDetect.py: 检测关节点，输出最终数据
@@ -15,8 +15,8 @@
 
 备注：
 * 图像为jpeg/png/jpg格式
-* model_a: [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
-* model_b: [BaiduAI](https://ai.baidu.com/tech/body/hand)
+* `model_1`: [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
+* `model_2`: [BaiduAI](https://ai.baidu.com/tech/body/hand)
 
 
 ## 使用

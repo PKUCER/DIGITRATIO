@@ -1,14 +1,14 @@
 from __future__ import division
-from models import model_a 
-from models import model_b
+from models import model_1 
+from models import model_2
 import cv2
 import time
 import numpy as np
-import find_circle
+#import find_circle
 import base64
 import os,sys
 threshold=0.1
-nPoints=22
+#nPoints=22
 radius=dict()
 name=dict()
 def trans(img_len,ra):
@@ -70,24 +70,25 @@ if __name__ == "__main__":
             img_name=img.strip().split(' ')[0]
             #如果带logo，检测cropped文件夹下的图片
             print(cnt,img_name)
-            model_a.parseImage1(cropped_dir, img_name, result_dir, 1)
+            model_1.parseImage1(cropped_dir, img_name, result_dir, 1)
             #第一个参数代表是否有经过裁剪的带Logo图，第二个参数表示用了哪个模型
-            model_b.parseImage2(cropped_dir, img_name, result_dir, 1)
+            model_2.parseImage2(cropped_dir, img_name, result_dir, 1)
     
     print('Images With Logo Is Dond:'+str(cnt))
     cnt=0
     #检测没有logo的图片
-    with open(preprocess_dir+'/'+img_dir+'_without_logo.txt') as fn:
-        for img in fn:
-            if img.find('.jpeg') < 0 and img.find('.jpg') < 0 and img.find('.png') < 0:
-                continue 
-            cnt+=1
-            img_name=img.strip()
-            #如果没有logo，检测原文件夹下的图片
-            print(cnt,img_name)
-            model_a.parseImage1(img_dir, img_name, result_dir, 2)
-            model_b.parseImage2(img_dir, img_name, result_dir, 2)
-    print('Images Without Logo Is Dond:'+str(cnt))
+    if os.path.exists(preprocess_dir+'/'+img_dir+'_without_logo.txt'):
+        with open(preprocess_dir+'/'+img_dir+'_without_logo.txt') as fn:
+            for img in fn:
+                if img.find('.jpeg') < 0 and img.find('.jpg') < 0 and img.find('.png') < 0:
+                    continue 
+                cnt+=1
+                img_name=img.strip()
+                #如果没有logo，检测原文件夹下的图片
+                print(cnt,img_name)
+                model_1.parseImage1(img_dir, img_name, result_dir, 2)
+                model_2.parseImage2(img_dir, img_name, result_dir, 2)
+        print('Images Without Logo Is Dond:'+str(cnt))
     #计算实际长度
     
     calActual(1,result_dir,preprocess_dir)
